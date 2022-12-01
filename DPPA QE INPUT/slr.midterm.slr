@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH -p shared
+#SBATCH -A csd741
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
+#SBATCH -t 0:10:00
+#SBATCH --mem=32G
+#SABTCH
+#SBATCH -o totalnrg.%j.out
+#SBATCH -J totalnrg.qe
+#SBATCH -J ti-334
+#SBATCH --export=ALL
+
+module load slurm cpu/0.15.4  gcc/9.2.0  openmpi/3.1.6 quantum-espresso/6.7.0-openblas
+
+echo "QE simulations started at $(date) by $(echo lphillips1)"
+
+temp_dir=/expanse/lustre/scratch/lphillips1/temp_project
+cp totalnrg.midterm.in /expanse/lustre/scratch/lphillips1/temp_project
+cd /expanse/lustre/scratch/lphillips1/temp_project
+
+srun --mpi=pmi2 -n 16 pw.x -npool 1  -input totalnrg.midterm.in
