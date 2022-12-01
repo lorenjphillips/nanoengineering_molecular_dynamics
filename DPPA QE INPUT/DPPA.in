@@ -5,7 +5,7 @@
    tstress = .true.
    tprnfor = .true.
    pseudo_dir = '/expanse/lustre/projects/csd741/tpascal/nano110/qe/pseudo/',
-   outdir='/expanse/lustre/scratch/lphillips1/project/',
+   outdir='/expanse/lustre/scratch/lphillips1/temp_project/',
    verbosity = 'high'
 /
 
@@ -32,7 +32,7 @@
 /
 
 ATOMIC_SPECIES
-    C          12.0080         c_pde_v1.2.uspp.F.UPF
+    C          	12.0080         c_pbe_v1.2.uspp.F.UPF 
     O           15.999          o_pbe_v1.2.uspp.F.UPF
     H           1.00784         h_pbe_v1.4.uspp.F.UPF   
 

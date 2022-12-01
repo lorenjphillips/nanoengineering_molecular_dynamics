@@ -15,8 +15,8 @@ module load slurm cpu/0.15.4  gcc/9.2.0  openmpi/3.1.6 quantum-espresso/6.7.0-op
 
 echo "QE simulations for DPPA started at $(date) by $(echo lphillips1)"
 
-temp_dir=/expanse/lustre/scratch/lphillips1/project
-cp DPPA.in /expanse/lustre/scratch/lphillips1/project
-cd /expanse/lustre/scratch/lphillips1/project
+temp_dir=/expanse/lustre/scratch/lphillips1/temp_project
+cp DPPA.in /expanse/lustre/scratch/lphillips1/temp_project
+cd /expanse/lustre/scratch/lphillips1/temp_project
 
 srun --mpi=pmi2 -n 16 pw.x -npool 1  -input DPPA.in
